@@ -63,23 +63,23 @@ void loop() {
   openValue = map(openValue, 0, 1023, 0, 4000);
   closeValue = analogRead(closePin);
   closeValue = map(closeValue, 0, 1023, 0, 8000);
-  tempVoltageValue = analogRead(A3) * (3300 / 1024);
-  tempCent = (tempVoltageValue - 500) / 10;
-  tempFahr = (tempCent * 9 / 5.0) + 32;
+  //tempVoltageValue = analogRead(A3) * (3300 / 1024);
+  //tempCent = (tempVoltageValue - 500) / 10;
+  //tempFahr = (tempCent * 9 / 5.0) + 32;
 
   Serial.println("hi");
   //open
   //digitalWrite(ledPin, HIGH);
   //digitalWrite(valvePin, HIGH);
   solenoid->run(FORWARD);
-  delay(1000);
+  delay(250);
   //delay(openValue);
 
   //close
   //digitalWrite(ledPin, LOW);
   //digitalWrite(valvePin, LOW);
   solenoid->run(RELEASE);
-  delay(1000);
+  delay(2500);
   //delay(closeValue);
 
   // Print Open parameter to LCD
